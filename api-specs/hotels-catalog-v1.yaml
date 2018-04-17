@@ -130,14 +130,18 @@ definitions:
       tripAdvisorRatingUrl:
         type: string
   inventory:
-    type: array
-    items: 
-      type: object
-      properties:
-        roomType:
-          type: string
-        availableRooms:
-          type: integer
-        price:
-          type: string
-
+    type: object
+    properties:
+      inventory:
+        type: array
+        items:
+          $ref: '#/definitions/inventoryItem'
+  inventoryItem:
+    type: object
+    properties:
+      roomType:
+        type: string
+      availableRooms:
+        type: integer
+      price:
+        type: string
