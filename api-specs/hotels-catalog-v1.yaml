@@ -24,6 +24,8 @@ paths:
       responses:
         '200':
           description: successful operation
+          schema:
+            $ref: '#/definitions/hotels'
   /{hotelname}:
     get:
       operationId: 'gethoteldetails'
@@ -33,6 +35,8 @@ paths:
       responses:
         '200':
           description: successful operation
+          schema:
+            $ref: '#/definitions/hotel'
       parameters:
         - name: hotelname
           in: path
@@ -47,6 +51,8 @@ paths:
      responses:
        '200':
          description: successful operation
+         schema:
+           $ref: '#/definitions/review'
      parameters:
        - name: hotelname
          in: path
@@ -61,8 +67,77 @@ paths:
      responses:
        '200':
          description: successful operation
+         schema:
+           $ref: '#/definitions/inventory'
      parameters:
        - name: hotelname
          in: path
          required: true
          type: string
+definitions:
+  hotels:
+    type: object
+    properties:
+      hotels:
+        type: array
+        items:
+          $ref: '#/definitions/hotel'
+  hotel:
+    type: object
+    properties:
+      hotelname:
+        type: string
+      city:
+        type: string
+      address1:
+        type: string
+      stateProvinceCode:
+        type: string	
+      countryCode:
+        type: string	
+      airportCode:
+        type: string	
+      locationDescription:
+        type: string	
+      amenityMask:
+        type: integer	
+      postalCode:
+        type: integer
+      rateCurrencyCode:
+        type: string	
+      hotelRating:
+        $ref: '#/definitions/rating'
+  review:
+    type: object
+    properties:
+      hotelId:
+        type: integer
+      hotelname:
+        type: string
+      review:
+        type: string
+      hotelRating:
+        $ref: '#/definitions/rating'
+  rating:
+    type: object
+    properties:
+      hotelId:
+        type: integer
+      rating:
+        type: integer
+      tripAdvisorRating:
+        type: integer
+      tripAdvisorRatingUrl:
+        type: string
+  inventory:
+    type: array
+    items: 
+      type: object
+      properties:
+        roomType:
+          type: string
+        availableRooms:
+          type: integer
+        price:
+          type: string
+
