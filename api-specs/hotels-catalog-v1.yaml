@@ -1,0 +1,68 @@
+swagger: '2.0'
+info:
+  description: 'This is a sample Hotels Server.  You can find out more about OpenAPI spec at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).'
+  version: 3.0.0
+  title: HotelsAPIDemo
+  contact:
+    email: sandeepmuru@google.com
+host: demo5-test.apigee.net
+securityDefinitions:
+ APIKeyQueryParam:
+     type: apiKey
+     in: query
+     name: api_key
+schemes:
+  - https
+basePath: /v1/hotels
+paths:
+  /:
+    get:
+      operationId: getallhotels
+      summary: 'Get All hotels '
+      security:
+        - APIKeyQueryParam: []
+      responses:
+        '200':
+          description: successful operation
+  /{hotelname}:
+    get:
+      operationId: 'gethoteldetails'
+      summary: Get hotel and rating details for a given hotel name
+      security:
+        - APIKeyQueryParam: []
+      responses:
+        '200':
+          description: successful operation
+      parameters:
+        - name: hotelname
+          in: path
+          required: true
+          type: string
+  /{hotelname}/reviews:
+   get:
+     operationId: 'gethotelreviews'
+     summary: Get reviews  for a given hotel name
+     security:
+       - APIKeyQueryParam: []
+     responses:
+       '200':
+         description: successful operation
+     parameters:
+       - name: hotelname
+         in: path
+         required: true
+         type: string
+  /{hotelname}/inventory:
+   get:
+     operationId: 'gethotelinventory'
+     summary: Get inventory, availabiliy and pricing for a given hotel name
+     security:
+       - APIKeyQueryParam: []
+     responses:
+       '200':
+         description: successful operation
+     parameters:
+       - name: hotelname
+         in: path
+         required: true
+         type: string
