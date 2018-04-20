@@ -31,6 +31,6 @@ values ("Hotel Deca - A Noble House Hotel","Burlingame","4507 Brooklyn Avenue NE
 insert into hotelcatalog(hotelname,city,address1,stateProvinceCode,countryCode,airportCode,locationDescription,amenityMask,postalCode,rateCurrencyCode,hotelId,rating,tripAdvisorRating,tripAdvisorRatingUrl,review,roomtype,availablerooms,price) 
 values ("Sheraton Seattle Hotel","New York","1400 6th Ave","WA","US","SEA","In Seattle (University District)",262147,"98101","USD",164116,4,4,"http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-12345-4.gif","high end hotel","deluxe",10,350.0);
 
-insert into hotelreview(hotelid,reviewdesc) values (98121,"review about hotel test");
-insert into hotelreview(hotelid,reviewdesc) values (98121,"Nice  to stay at Hotel Andra");
-insert into hotelreview(hotelid,reviewdesc) values (98101,"review about Sheraton Seattle Hotel");
+insert into hotelreview(hotelid,reviewdesc) values (119562,"review about hotel test");
+insert into hotelreview(hotelid,reviewdesc) values (119562,"Nice  to stay at Hotel Andra");
+insert into hotelreview(hotelid,reviewdesc) values (164116,"review about Sheraton Seattle Hotel");
