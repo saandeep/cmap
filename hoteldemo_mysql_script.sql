@@ -57,3 +57,7 @@ insert into hotelreview(hotelid,reviewdesc) values (164122,"review about The Wes
 insert into hotelreview(hotelid,reviewdesc) values (213497,"happy to stay in this hotel");
 insert into hotelreview(hotelid,reviewdesc) values (213497,"Nice  to stay at this hotel");
 insert into hotelreview(hotelid,reviewdesc) values (213497,"review about W Seattle");
+
+insert into hotelreview(hotelid,reviewdesc) values (191964,"happy to stay in this hotel");
+insert into hotelreview(hotelid,reviewdesc) values (191964,"Nice  to stay at this hotel");
+insert into hotelreview(hotelid,reviewdesc) values (191964,"review about Hotel Deca - A Noble House Hotel");
