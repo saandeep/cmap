@@ -1,0 +1,67 @@
+html, body {
+  height: 100%
+}
+
+main {
+  height: 92%
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+.section {
+  width: 100%
+}
+
+.hotel-title {
+  margin-top: 0;
+}
+
+.search {
+  background-color: transparent;
+  border: none;
+  border-bottom: 0 !important;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  font-size: 16px;
+  margin: 0 0 0 0 !important;
+  padding: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: border .3s, -webkit-box-shadow .3s;
+  transition: border .3s, -webkit-box-shadow .3s;
+  transition: box-shadow .3s, border .3s;
+  transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+}
+
+h1 {
+  font-size: 4.2rem;
+  line-height: 110%;
+  margin: 1.68rem 0 1.68rem 0;
+}
+
+.input-field>label:not(.label-icon).active {
+  -webkit-transform: translateY(-25px) translateX(-5px) scale(0.8);
+  transform: translateY(-25px) translateX(-5px) scale(0.8);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.no-trans {
+  -webkit-transform: translateY(-14px) scale(0.8) !important;
+  transform: translateY(-14px) scale(0.8) !important;
+}
+
+.input-field {
+  margin-top: 0;
+  margin-bottom: 0;
+}

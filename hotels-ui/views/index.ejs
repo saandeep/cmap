@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/head %>
+  </head>
+  <body>
+    <main class="grey lighten-3 valign-wrapper">
+      <div class="section no-pad-bot ">
+        <div class="container">
+          <br><br>
+          <h1 class="header center orange-text">Search for Hotels</h1>
+          <div class="row center">
+
+            <form class="col s12 card-panel valign-wrapper" id="search" method="POST" action="/hotels">
+                <div class="input-field col s11">
+                   <input class="search" id="search_bar" type="text">
+                    <label for="search_bar">Enter a location</label>
+                </div>
+                <input type="hidden" id="url" name="url"/>
+                <btn onclick="go()" class="btn-flat waves-effect orange-text center col s1">Go!</btn>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Config Modal -->
+      <div id="config" class="modal bottom-sheet">
+        <div class="modal-content">
+          <h5>Config</h5>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="api_url" type="text" placeholder="API URL">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <btn class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</btn>
+          <btn onclick="save()" class="modal-action modal-close waves-effect waves-green btn-flat">Save</btn>
+        </div>
+      </div>
+    </main>
+  </body>
+  <footer>
+    <% include ./partials/footer %>
+  </footer>
+</html>

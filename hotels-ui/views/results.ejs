@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/head %>
+  </head>
+  <body class="grey lighten-3 ">
+    <% include ./partials/nav %>
+        <div class="container">
+          <div class="row center">
+
+            <form class="col s12 card-panel valign-wrapper" id="search" method="POST" action="/hotels">
+                <div class="input-field col s11">
+                   <input class="search" id="search_bar" type="text">
+                    <label for="search_bar">Enter a location</label>
+                </div>
+                <input type="hidden" id="url" name="url"/>
+                <btn onclick="go()" class="btn-flat waves-effect orange-text center col s1">Go!</btn>
+            </form>
+
+          </div>
+
+          <ul>
+            <% hotels.forEach(function(hotel) { %>
+                <li class="card-panel row">
+                  <div class="col s10">
+                    <h5 class="orange-text darken-3 hotel-title"><%= hotel.hotelname %></h5>
+                    <p> <%= hotel.address1 %> <br> <%= hotel.city %></p>
+
+                    <blockquote> <%= hotel.locationDescription %> </blockquote>
+                    <img src="<%= hotel.hotelRating.tripAdvisorRatingUrl %>"/>
+
+                  </div>
+                  <div class="col s2">
+                    <% if(hotel.lowRate != '' && hotel.hightRate != '') { %>
+                      <h5><%= hotel.lowRate %> - <%= hotel.highRate %></h5> <h6><%= hotel.rateCurrencyCode %></h6>
+                    <% } else { %>
+                      <h5>N/A</h5>
+                    <% } %>
+                    <btn class="btn waves-effect white-text orange darken-4">Book</btn>
+                  </div>
+                </li>
+            <% }); %>
+          </ul>
+
+       </div>
+
+      <!-- Config Modal -->
+      <div id="config" class="modal bottom-sheet">
+        <div class="modal-content">
+          <h5>Config</h5>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="api_url" type="text" placeholder="API URL">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <btn class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</btn>
+          <btn onclick="save()" class="modal-action modal-close waves-effect waves-green btn-flat">Save</btn>
+        </div>
+      </div>
+  </body>
+  <footer>
+    <% include ./partials/footer %>
+  </footer>
+</html>
