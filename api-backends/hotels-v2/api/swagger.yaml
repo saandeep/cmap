@@ -1,0 +1,154 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a sample Hotels Server.  You can find out more about OpenAPI\
+    \ spec at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/)."
+  version: "3.0.0"
+  title: "HotelsAPIDemo"
+  contact:
+    email: "sandeepmuru@google.com"
+host: "demo5-test.apigee.net"
+basePath: "/v1/hotels"
+schemes:
+- "https"
+paths:
+  /:
+    get:
+      summary: "Get All hotels "
+      operationId: "getallhotels"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/hotels"
+      security:
+      - APIKeyQueryParam: []
+      x-swagger-router-controller: "Default"
+  /{hotelname}:
+    get:
+      summary: "Get hotel and rating details for a given hotel name"
+      operationId: "gethoteldetails"
+      parameters:
+      - name: "hotelname"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/hotel"
+      security:
+      - APIKeyQueryParam: []
+      x-swagger-router-controller: "Default"
+  /{hotelname}/reviews:
+    get:
+      summary: "Get reviews  for a given hotel name"
+      operationId: "gethotelreviews"
+      parameters:
+      - name: "hotelname"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/review"
+      security:
+      - APIKeyQueryParam: []
+      x-swagger-router-controller: "Default"
+  /{hotelname}/inventory:
+    get:
+      summary: "Get inventory, availabiliy and pricing for a given hotel name"
+      operationId: "gethotelinventory"
+      parameters:
+      - name: "hotelname"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/inventory"
+      security:
+      - APIKeyQueryParam: []
+      x-swagger-router-controller: "Default"
+securityDefinitions:
+  APIKeyQueryParam:
+    type: "apiKey"
+    name: "api_key"
+    in: "query"
+definitions:
+  hotels:
+    type: "object"
+    properties:
+      hotels:
+        type: "array"
+        items:
+          $ref: "#/definitions/hotel"
+  hotel:
+    type: "object"
+    properties:
+      hotelname:
+        type: "string"
+      city:
+        type: "string"
+      address1:
+        type: "string"
+      stateProvinceCode:
+        type: "string"
+      countryCode:
+        type: "string"
+      airportCode:
+        type: "string"
+      locationDescription:
+        type: "string"
+      amenityMask:
+        type: "integer"
+      postalCode:
+        type: "integer"
+      rateCurrencyCode:
+        type: "string"
+      hotelRating:
+        $ref: "#/definitions/rating"
+  review:
+    type: "object"
+    properties:
+      hotelId:
+        type: "integer"
+      hotelname:
+        type: "string"
+      review:
+        type: "string"
+      hotelRating:
+        $ref: "#/definitions/rating"
+  rating:
+    type: "object"
+    properties:
+      hotelId:
+        type: "integer"
+      rating:
+        type: "integer"
+      tripAdvisorRating:
+        type: "integer"
+      tripAdvisorRatingUrl:
+        type: "string"
+  inventory:
+    type: "object"
+    properties:
+      inventory:
+        type: "array"
+        items:
+          $ref: "#/definitions/inventoryItem"
+  inventoryItem:
+    type: "object"
+    properties:
+      roomType:
+        type: "string"
+      availableRooms:
+        type: "integer"
+      price:
+        type: "string"
