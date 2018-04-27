@@ -17,7 +17,7 @@ rateCurrencyCode varchar(3) not null ,
  tripAdvisorRatingUrl varchar(250) not null,
  highRate int not null, lowRate int not null);
 
-create table hotelreview(hotelid int not null, reviewdesc varchar(250) not null,hotelname varchar(250));
+create table hotelreview (reviewid int not null auto_increment,hotelid int not null,hotelname varchar(250) not null,reviewdesc varchar(250) not null, primary key (reviewid));
 create table hotelinventory(hotelid int not null,roomtype varchar(100),availablerooms int not null,price double not null);
 
 --insert into hotelcatalog 
