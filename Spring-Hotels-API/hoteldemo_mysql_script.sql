@@ -17,7 +17,7 @@ rateCurrencyCode varchar(3) not null ,
  tripAdvisorRatingUrl varchar(250) not null,
  highRate int not null, lowRate int not null);
 
-create table hotelreview(hotelid int not null, hotelname varchar(250),reviewdesc varchar(250) not null);
+create table hotelreview(hotelid int not null, reviewdesc varchar(250) not null,hotelname varchar(250));
 create table hotelinventory(hotelid int not null,roomtype varchar(100),availablerooms int not null,price double not null);
 
 --insert into hotelcatalog 
@@ -40,30 +40,31 @@ insert into hotelcatalog(hotelname,city,address1,stateProvinceCode,countryCode,a
 
 
 -- insert into hotelreview
-insert into hotelreview(hotelid,reviewdesc) values (119562,"pleasant stay at hotel andra");
-insert into hotelreview(hotelid,reviewdesc) values (119562,"Nice  to stay at Hotel Andra");
-insert into hotelreview(hotelid,reviewdesc) values (119562,"Awesome stay at Hotel Andra");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (119562,"pleasant stay at hotel andra","Hotel Andra");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (119562,"Nice  to stay at Hotel Andra","Hotel Andra");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (119562,"Awesome stay at Hotel Andra","Hotel Andra");
 
-insert into hotelreview(hotelid,reviewdesc) values (191964,"happy to stay in this hotel");
-insert into hotelreview(hotelid,reviewdesc) values (191964,"Nice  to stay at this hotel");
-insert into hotelreview(hotelid,reviewdesc) values (191964,"review about Hotel Deca - A Noble House Hotel");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (191964,"happy to stay in this hotel","Hotel Deca - A Noble House Hotel");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (191964,"Nice  to stay at this hotel","Hotel Deca - A Noble House Hotel");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (191964,"review about Hotel Deca - A Noble House Hotel","Hotel Deca - A Noble House Hotel");
 
-insert into hotelreview(hotelid,reviewdesc) values (164116,"happy to stay");
-insert into hotelreview(hotelid,reviewdesc) values (164116,"Awesome stay here");
-insert into hotelreview(hotelid,reviewdesc) values (164116,"review about Sheraton Seattle Hotel");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (164116,"happy to stay","Sheraton Seattle Hotel");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (164116,"Awesome stay here","Sheraton Seattle Hotel");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (164116,"review about Sheraton Seattle Hotel","Sheraton Seattle Hotel");
 
-insert into hotelreview(hotelid,reviewdesc) values (1257278,"happy to stay in this hotel");
-insert into hotelreview(hotelid,reviewdesc) values (1257278,"Nice  to stay at this hotel");
-insert into hotelreview(hotelid,reviewdesc) values (1257278,"review about Motif Seattle Hotel");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (1257278,"happy to stay in this hotel","Sheraton Seattle Hotel");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (1257278,"Nice  to stay at this hotel","Sheraton Seattle Hotel");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (1257278,"review about Motif Seattle Hotel","Sheraton Seattle Hotel");
 
-insert into hotelreview(hotelid,reviewdesc) values (164122,"happy to stay in this hotel");
-insert into hotelreview(hotelid,reviewdesc) values (164122,"Nice  to stay at this hotel");
-insert into hotelreview(hotelid,reviewdesc) values (164122,"review about The Westin Seattle");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (164122,"happy to stay in this hotel","The Westin Seattle");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (164122,"Nice  to stay at this hotel","The Westin Seattle");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (164122,"review about The Westin Seattle","The Westin Seattle");
 
 
-insert into hotelreview(hotelid,reviewdesc) values (213497,"happy to stay in this hotel");
-insert into hotelreview(hotelid,reviewdesc) values (213497,"Nice  to stay at this hotel");
-insert into hotelreview(hotelid,reviewdesc) values (213497,"review about W Seattle");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (213497,"happy to stay in this hotel","W Seattle");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (213497,"Nice  to stay at this hotel","W Seattle");
+insert into hotelreview(hotelid,reviewdesc,hotelname) values (213497,"review about W Seattle","W Seattle");
+
 
 
 -- insert into hotelinventory
